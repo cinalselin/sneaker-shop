@@ -12,9 +12,9 @@
 <body>
     <!------------------------ MODAL ------------------------>
     <div id="modalCookie">
-        <div>
+        <div class="modalHeader">
             <h2>WE USE COOKIES</h2>
-            <div>
+            <div class="buttons">
                 <button id="acceptCookie">Accept</button>
                 <button id="rejectCookie">Reject all</button>
             </div>
@@ -33,19 +33,19 @@
             </div>
         </nav>
         <header>
-            <h1> LET'S EXPLORE UNIQUE SHOES.
+            <h1> <span>LET'S</span> EXPLORE <span>UNIQUE</span>
+                <br>SHOES.
             </h1>
             <p>Live for Influential and Innovative fashion!</p>
             <button>Shop now</button>
+            <div class="shopping-cart">
+                <p id="countItem">0</p>
+            </div>
         </header>
-        <div class="shopping-cart">
-            <p id="countItem">0</p>
-            <img src="./assets/img/shopping-cart.svg" alt="Shopping Cart Icon">
-        </div>
         <main>
             <h2>NEW ARRIVALS</h2>
             <section id="sneaker-items">
-                <!-- Hier wird der Inhalt über JavaScript erstellt -->
+                <!-- This content is created using JavaScript -->
             </section>
             <section class="download-app">
                 <div>
@@ -57,14 +57,14 @@
                         <img src="./assets/img/google-play.png" alt="Google Play Store ICon">
                     </div>
                 </div>
-                <img src="./assets/img/app.png" alt="Iphone App Image">
+                <img id="app" src="./assets/img/app.png" alt="Iphone App Image">
             </section>
             <section class="newsletter">
-                <h3>JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO</h3>
-                <p>Type your email down below and be young wild generation</p>
-                <form>
+                <h3 id="formGreeting">JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO</h3>
+                <p id="formText">Type your email down below and be young wild generation</p>
+                <form id="formField">
                     <input type="text" placeholder="Add your email here">
-                    <input type="submit" value="SEND">
+                    <input type="submit" value="SEND" id="emailSubmit">
                 </form>
             </section>
             <footer>
@@ -77,25 +77,25 @@
                         <img src="./assets/img/twitter.svg" alt="Twitter Icon">
                         <img src="./assets/img/linkedin.svg" alt="Linkedin Icon">
                     </div>
-                    <div>
-                        <p>Company</p>
-                        <a href="#">About</a>
-                        <a href="#">Contact us</a>
-                        <a href="#">Support</a>
-                        <a href="#">Careers</a>
-                    </div>
-                    <div>
-                        <p>Quick Link</p>
-                        <a href="#">Share Location</a>
-                        <a href="#">Order Tracking</a>
-                        <a href="#">Size Guide</a>
-                        <a href="#">FAQs</a>
-                    </div>
-                    <div>
-                        <p>Legal</p>
-                        <a href="#">Terms & conditions</a>
-                        <a href="#">Privacy Policy</a>
-                    </div>
+                </div>
+                <div>
+                    <p>Company</p>
+                    <a href="#">About</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">Support</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div>
+                    <p>Quick Link</p>
+                    <a href="#">Share Location</a>
+                    <a href="#">Order Tracking</a>
+                    <a href="#">Size Guide</a>
+                    <a href="#">FAQs</a>
+                </div>
+                <div>
+                    <p>Legal</p>
+                    <a href="#">Terms & conditions</a>
+                    <a href="#">Privacy Policy</a>
                 </div>
             </footer>
 

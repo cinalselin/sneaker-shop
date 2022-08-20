@@ -1,16 +1,439 @@
-img {
-  width: 50px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;900&family=Roboto&display=swap");
+
+/* font-family: 'Poppins', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */
+
+:root {
+  --mainBlack: #242323;
+  --lighterBlack: #191818;
+  --mainGrey: #7f7f7f;
+  --greyApp: #7c7c7c;
+  --mainYellow: #e5c643;
+  --YellowLight: 251, 237, 163;
+  --socialMediaYellow: #ebd96b;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =================== MODAL STYLING =================== */
 #modalCookie {
-  background-color: rgba(255, 0, 0, 0.327);
-  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  min-height: 100vh;
   position: absolute;
   z-index: 10;
+  background-color: rgba(var(--YellowLight), 0.2);
+}
+
+.modalHeader {
+  top: 0;
+  background-color: #fbeda3;
+  padding: 41px 100px 26px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+#modalCookie h2 {
+  background: url("../img/background_headline.svg") no-repeat;
+  background-position: left 259px top 20px;
+}
+
+#acceptCookie,
+#rejectCookie {
+  padding: 20px 40px;
+  gap: 10px;
+  width: 180px;
+  height: 85px;
+  background: #000000;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+}
+
+#rejectCookie {
+  background-color: #fff;
+  color: #000;
+  width: 204px;
+}
+/* =================== GENERELL STYLING =================== */
+h1 {
+  width: 474px;
+  height: 473px;
+  font-family: "Poppins";
+  font-weight: 900;
+  font-size: 96px;
+  line-height: 120px;
+  color: #000000;
+}
+
+h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 50px;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+h4 {
+  font-family: "Poppins";
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 0.03em;
+
+  color: #ffffff;
+}
+
+#blurBackground {
+  padding: 0 100px;
 }
 
 .blur {
   filter: blur(5px);
   -webkit-filter: blur(5px);
+}
+
+/* =================== NAV =================== */
+
+nav {
+  margin-top: 48px;
+  margin-bottom: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav img {
+  width: 192px;
+  height: 60px;
+}
+
+.menu {
+  display: flex;
+  gap: 65px;
+  align-items: center;
+}
+
+.menu a,
+button {
+  width: 123px;
+  height: 33px;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  letter-spacing: 0.01em;
+  color: var(--mainBlack);
+  text-decoration: none;
+}
+
+.menu button {
+  background-color: #000;
+  color: #fff;
+  width: 134px;
+  height: 62px;
+  background: #000000;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+}
+
+/* =================== HEADER SECTION =================== */
+
+header {
+  padding: 77px 0 89px 199px;
+  width: 1720px;
+  height: 852px;
+  background: url("../img/header-image.png") no-repeat;
+  background-size: cover;
+  border-radius: 59px;
+  margin-bottom: 140px;
+}
+
+header span:first-of-type {
+  background-color: #fff;
+}
+
+header span:last-of-type {
+  background-color: var(--mainYellow);
+}
+
+header p {
+  width: 606px;
+  height: 58px;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: -0.05em;
+  color: var(--lighterBlack);
+  margin: 40px 0 30px;
+}
+
+header button {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 45px;
+  letter-spacing: -0.05em;
+  color: #fff;
+  width: 218px;
+  height: 85px;
+  background: #000;
+  border-radius: 10px;
+}
+
+/* =================== SHOPPING CART =================== */
+
+.shopping-cart {
+  width: 140px;
+  height: 140px;
+  position: fixed;
+  right: 59px;
+  top: 87vh;
+  border-radius: 100%;
+  background: url("../img/shopping-cart.svg") no-repeat;
+  background-position: center;
+  background-color: #fbeda3;
+}
+
+#countItem {
+  margin: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 59px;
+  height: 59px;
+  border-radius: 100%;
+  background-color: var(--mainYellow);
+}
+
+/* =================== SNEAKER SECTION =================== */
+
+main > h2 {
+  background: url("../img/background_headline.svg") no-repeat;
+  background-position: left 220px top 20px;
+  margin-bottom: 100px;
+}
+
+#sneaker-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+#sneaker-items img {
+  width: 533.33px;
+  height: 704px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+#sneaker-items h4 {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: -0.04em;
+  color: #191919;
+  margin-top: 28px;
+}
+
+#addToCart {
+  cursor: pointer;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: -0.04em;
+  color: #191919;
+  margin: 7px 0;
+}
+
+#sneaker-items p:not(h4 + p:first-of-type) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.04em;
+  color: #7f7f7f;
+  margin-bottom: 7px;
+}
+
+#sneakerSizes {
+  display: flex;
+  gap: 20px;
+  text-decoration: underline;
+  color: #7f7f7f;
+}
+
+/* =================== APP SECTION =================== */
+
+.download-app {
+  margin: 208px 0 200px;
+  display: flex;
+  gap: 304px;
+  padding-left: 219px;
+}
+
+.download-app h2 {
+  width: 520px;
+  font-family: "Poppins";
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  color: #000000;
+  margin-bottom: 41px;
+}
+
+.download-app #app {
+  width: 671px;
+}
+
+.download-app p {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+  letter-spacing: -0.04em;
+  color: var(--greyApp);
+  width: 419px;
+  margin-bottom: 65px;
+}
+
+/* =================== NEWSLETTER SECTION =================== */
+
+.newsletter {
+  padding: 140px;
+  min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  background-color: var(--mainYellow);
+  color: #fff;
+}
+
+.newsletter h3 {
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 900;
+  font-size: 55px;
+  line-height: 70px;
+  letter-spacing: 0.03em;
+  width: 966px;
+}
+
+.newsletter p {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: 0.03em;
+  color: #fffcf8;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+form input[type="text"] {
+  padding: 10px 10px 10px 20px;
+  gap: 10px;
+  width: 574px;
+  height: 85px;
+  background: #fff;
+  border-radius: 10px;
+  border: none;
+}
+
+form input[type="submit"] {
+  color: #fff;
+  width: 153px;
+  height: 65px;
+  background-color: #000000;
+  border-radius: 10px;
+  border: none;
+  margin-left: -170px;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 45px;
+  letter-spacing: -0.05em;
+}
+
+input::placeholder {
+  font-size: 24px;
+}
+
+/* =================== FOOTER =================== */
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 199px 100px 147px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+footer img {
+  background-color: var(--mainYellow);
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  padding: 16px;
+  object-fit: 100%;
+}
+
+.social-media-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+footer h4 + p {
+  color: #8e8e8e;
+  width: 415px;
+}
+
+footer p,
+a {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  color: #d9d9d9;
+}
+
+footer a {
+  color: #8e8e8e;
+  text-decoration: none;
 }
