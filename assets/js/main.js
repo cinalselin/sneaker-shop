@@ -1,4 +1,4 @@
-// ====================== COOKIE FUCNTION ======================
+// ============================================ COOKIE FUCNTION ============================================
 
 // request
 const modalCookie = document.getElementById("modalCookie");
@@ -26,7 +26,19 @@ document.getElementById("rejectCookie").addEventListener("click", (event) => {
   document.getElementById("blurBackground").classList.remove("blur");
 });
 
-// ====================== ARRAY & DOM PROPERTIES  ======================
+// ============================================ NEWSLETTER FUNCTION  ============================================
+const formField = document.getElementById("formField");
+const formGreeting = document.getElementById("formGreeting");
+const formText = document.getElementById("formText");
+
+document.getElementById("emailSubmit").addEventListener("click", (event) => {
+  event.preventDefault();
+  formField.style.display = "none";
+  formGreeting.innerText = "THANK YOU!";
+  formText.innerText = "You will get our response shortly.";
+});
+
+// ============================================ ARRAY & DOM PROPERTIES  ============================================
 
 const data = [
   {
@@ -120,13 +132,15 @@ const sneakerItems = document.getElementById("sneaker-items");
 data.forEach((item) => {
   // New Dom-Elements
   const divTag = document.createElement("div");
+  const divTagNamePlus = document.createElement("div");
   const divTagSizes = document.createElement("div");
+  const divTagPrice = document.createElement("div");
   const sneakerImg = document.createElement("img");
   const sneakerName = document.createElement("h4");
   const sneakerPrice = document.createElement("p");
   const sneakerBrand = document.createElement("p");
   const addToCart = document.createElement("p");
-  const arrowUp = document.createElement("p");
+  const arrowUp = document.createElement("i");
 
   // div tag with an img tag & p tags (sneaker details)
   sneakerItems.appendChild(divTag);
@@ -135,18 +149,29 @@ data.forEach((item) => {
 
   //Sneaker Name as p tag
   sneakerName.innerText = item.name;
-  divTag.appendChild(sneakerName);
-  divTag.appendChild(addToCart);
+  divTag.appendChild(divTagNamePlus);
+  divTagNamePlus.setAttribute("id", "sneakerNamePlus");
+
+  divTagNamePlus.appendChild(sneakerName);
+  divTagNamePlus.appendChild(addToCart);
   addToCart.innerText = "+";
   addToCart.setAttribute("id", "addToCart");
 
   //Sneaker Price as p tag
+  divTag.appendChild(divTagPrice);
   sneakerPrice.innerText = item.price;
-  divTag.appendChild(sneakerPrice);
+  divTagPrice.appendChild(sneakerPrice);
+  divTagPrice.setAttribute("id", "sneakerPrice");
+
+  divTagPrice.appendChild(arrowUp);
+  arrowUp.setAttribute("id", "arrowUp");
+
+  arrowUp.innerHTML = `<i class="las la-caret-down"></i>`;
 
   //Sneaker Brand as p tag
   sneakerBrand.innerText = item.brand;
   divTag.appendChild(sneakerBrand);
+  sneakerBrand.setAttribute("class", "accordionNone");
 
   //Sneaker Sizes as p tag in a new div
   item.sizes.forEach((itemSize) => {
@@ -170,14 +195,15 @@ document.querySelectorAll("#addToCart").forEach((item) => {
   });
 });
 
-// ====================== NEWSLETTER FUNCTION  ======================
-const formField = document.getElementById("formField");
-const formGreeting = document.getElementById("formGreeting");
-const formText = document.getElementById("formText");
+// ====================== ACCORDION  ======================
 
-document.getElementById("emailSubmit").addEventListener("click", (event) => {
-  event.preventDefault();
-  formField.style.display = "none";
-  formGreeting.innerText = "THANK YOU!";
-  formText.innerText = "You will get our response shortly.";
+//TODO doesnt work
+
+const sneakerSizes = document.getElementById("sneakerSizes");
+
+document.querySelectorAll("#arrowUp").forEach((item) => {
+  item.addEventListener("click", () => {
+    console.log("klick");
+    sneakerSizes.style.display = "none";
+  });
 });
